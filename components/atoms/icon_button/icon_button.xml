@@ -1,0 +1,16 @@
+<component>
+	<previews>
+		<preview style_bg_color="0x888" />
+	</previews>
+	<api>
+		<prop name="icon" type="image" default="icon_heart" />
+	</api>
+	<styles>
+		<style name="style_base" width="content" height="content" />
+	</styles>
+
+	<view extends="lv_button">
+		<remove_style_all />
+		<lv_image src="$icon" align="center" />
+	</view>
+</component>
