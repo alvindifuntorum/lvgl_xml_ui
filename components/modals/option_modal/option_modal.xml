@@ -1,0 +1,152 @@
+<!-- figma_node_id="550:4940" -->
+<component>
+	<previews>
+		<preview width="1024" height="480" style_bg_color="0x888" />
+	</previews>
+	<api>
+		<prop name="title" type="string" default="Title" />
+		<prop name="options" type="string" default="Option 1&#10;Option 2&#10;Option 3&#10;Option 4&#10;Option 5" />
+		<prop name="selected" type="int" default="2" />
+		<prop name="close" type="image" default="icon_heart" />
+		<prop name="confirm" type="image" default="icon_heart" />
+	</api>
+
+	<styles>
+		<!-- Full-screen backdrop: dark semi-transparent, flex row -->
+		<style
+			name="style_backdrop"
+			width="100%"
+			height="100%"
+			layout="flex"
+			flex_flow="row"
+			flex_main_place="space_between"
+			flex_cross_place="center"
+			pad_all="8"
+			bg_color="0x000000"
+			bg_opa="178"
+		/>
+
+		<!-- Left / right side columns: button anchored to bottom -->
+		<style
+			name="style_side"
+			width="content"
+			height="100%"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="end"
+			flex_cross_place="center"
+		/>
+
+		<!-- Cancel / confirm icon buttons: 66x66, white bg, border -->
+		<style
+			name="style_action_btn"
+			width="66"
+			height="66"
+			bg_color="0xffffff"
+			bg_opa="255"
+			border_width="1"
+			border_color="0x333333"
+			border_opa="255"
+			radius="8"
+			pad_all="0"
+			clip_corner="true"
+		/>
+
+		<!-- Modal card: white, rounded, flex column -->
+		<style
+			name="style_modal"
+			width="494"
+			height="100%"
+			layout="flex"
+			flex_flow="column"
+			flex_cross_place="center"
+			bg_color="0xffffff"
+			bg_opa="255"
+			radius="16"
+			pad_top="8"
+			pad_bottom="16"
+			pad_left="22"
+			pad_right="22"
+		/>
+
+		<!-- Title bar -->
+		<style
+			name="style_title_bar"
+			width="375"
+			height="content"
+			min_height="40"
+			layout="flex"
+			flex_main_place="center"
+			flex_cross_place="center"
+			pad_top="16"
+			pad_bottom="16"
+		/>
+
+		<!-- Title label -->
+		<style name="style_title" text_align="center" text_color="0x333333" />
+
+		<!-- Wheel picker (roller) -->
+		<style name="style_roller" width="100%" height="491" />
+
+		<!-- Selected item: dark bar with white text, rounded -->
+		<style name="style_roller_selected" bg_color="0x333333" bg_opa="255" radius="8" text_color="0xffffff" />
+	</styles>
+
+	<view>
+		<remove_style_all />
+		<style name="style_backdrop" />
+
+		<!-- Left side: Cancel button (placeholder icon: icon_back) -->
+		<lv_obj name="side_left">
+			<remove_style_all />
+			<style name="style_side" />
+			<lv_button name="cancel_btn">
+				<remove_style_all />
+				<style name="style_action_btn" />
+				<lv_image src="$close" align="center" width="32" height="32" />
+			</lv_button>
+		</lv_obj>
+
+		<!-- Center: Modal card -->
+		<lv_obj name="modal">
+			<remove_style_all />
+			<style name="style_modal" />
+
+			<!-- Title -->
+			<lv_obj name="title_bar">
+				<remove_style_all />
+				<style name="style_title_bar" />
+				<lv_label name="title_label" text="$title">
+					<style name="style_title" />
+				</lv_label>
+			</lv_obj>
+
+			<!-- Spacer -->
+			<lv_obj width="375" height="16">
+				<remove_style_all />
+			</lv_obj>
+
+			<!-- Wheel picker (lv_roller) -->
+			<lv_roller name="options_roller" options="$options" selected="$selected">
+				<style name="style_roller" />
+				<style selector="selected" name="style_roller_selected" />
+			</lv_roller>
+
+			<!-- Spacer -->
+			<lv_obj width="375" height="30">
+				<remove_style_all />
+			</lv_obj>
+		</lv_obj>
+
+		<!-- Right side: Confirm button (placeholder icon: icon_cal_check) -->
+		<lv_obj name="side_right">
+			<remove_style_all />
+			<style name="style_side" />
+			<lv_button name="confirm_btn">
+				<remove_style_all />
+				<style name="style_action_btn" />
+				<lv_image src="$confirm" align="center" width="32" height="32" />
+			</lv_button>
+		</lv_obj>
+	</view>
+</component>
