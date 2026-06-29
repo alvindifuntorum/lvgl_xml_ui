@@ -1,0 +1,15 @@
+<component>
+	<previews>
+		<preview style_pad_all="4" />
+	</previews>
+
+	<api>
+		<prop name="label" type="string" default="Label" help="The text to be displayed on the button" />
+	</api>
+
+	<styles />
+
+	<view extends="lv_button">
+		<lv_label text="$label" align="center" />
+	</view>
+</component>
