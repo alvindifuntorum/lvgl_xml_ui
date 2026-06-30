@@ -1,24 +1,60 @@
 <!--
- Climate component XML definition.
+ Climate / Zone component XML definition.
+ figma_node_id="548:5405"
  -->
 <component>
+        <api>
+                <prop name="zone_name"     type="string" default="Bedroom" />
+                <prop name="mode_icon"     type="image"  default="icon_heart" />
+                <prop name="mode_label"    type="string" default="Cooling" />
+                <prop name="fanspeed_icon" type="image"  default="icon_heart" />
+                <prop name="fanspeed_label" type="string" default="Medium" />
+        </api>
+
         <styles>
                 <style name="style_base"
                         width="100%"
                         height="100%"
-
                         flex_grow="1"
                         layout="flex"
                         flex_flow="column"
-
                         flex_main_place="center"
                         flex_cross_place="center"
-
                         shadow_color="0x000"
-			shadow_offset_y="2"
-			shadow_opa="30"
-			shadow_spread="1"
-			shadow_width="#unit_sm"
+                        shadow_offset_y="2"
+                        shadow_opa="30"
+                        shadow_spread="1"
+                        shadow_width="#unit_sm"
+                        />
+
+                <style name="style_zone_name"
+                        text_font="geist_semibold_20"
+                        text_color="0x333333"
+                        />
+
+                <style name="style_room_temp"
+                        text_font="geist_regular_32"
+                        text_color="0x929293"
+                        />
+
+                <style name="style_target_temp"
+                        text_font="geist_light_60"
+                        text_color="0x333333"
+                        />
+
+                <style name="style_temp_unit"
+                        text_font="geist_regular_14"
+                        text_color="0x929293"
+                        />
+
+                <style name="style_arc_indicator"
+                        arc_width="12"
+                        arc_color="0x45AFDB"
+                        />
+
+                <style name="style_arc_main"
+                        arc_width="12"
+                        arc_color="0xD0D0D0"
                         />
         </styles>
 
@@ -26,34 +62,112 @@
                 <remove_style_all />
                 <style name="style_base" />
 
-                <column
-                        name="climate_content"
+                <!-- Zone header: nav arrows + zone name + page indicator dots -->
+                <column name="zone_header"
                         style_width="100%"
-                        style_height="100%"
-                        style_flex_grow="1"
-                        style_layout="flex"
-                        style_flex_flow="column"
-                        style_flex_main_place="center"
                         style_flex_cross_place="center"
                         style_pad_row="#unit_sm"
                         >
-                        <lv_arc
-                                name="target_temp_arc"
-                                value="20"
-                                min_value="16"
-                                max_value="31"
-                                width="86%"
-                                height="76%"
-                                align="center"
+                        <row name="zone_nav"
+                                style_width="100%"
+                                style_flex_main_place="space_between"
+                                style_flex_cross_place="center"
+                                style_pad_left="#unit_xl"
+                                style_pad_right="#unit_xl"
                                 >
-                                <lv_label name="internal_temp_label" text="--itemp" align="center" y="-18" />
-                                <lv_label name="target_temp_label" text="--ttemp" align="center" y="4" />
-                                <lv_label name="sleep_label" text="--sleep" align="center" y="26" />
-                        </lv_arc>
-                        <row style_flex_main_place="center" style_flex_cross_place="center" style_pad_column="#unit_sm">
-                                <icon_label_button name="mode_button" label="Auto" />
-                                <icon_label_button name="fanspeed_button" label="Auto" />
+                                <icon_button name="nav_prev" icon="icon_heart" />
+                                <lv_label name="zone_name_label" text="$zone_name">
+                                        <style name="style_zone_name" />
+                                </lv_label>
+                                <icon_button name="nav_next" icon="icon_heart" />
+                        </row>
+
+                        <row name="page_indicators"
+                                style_flex_main_place="center"
+                                style_flex_cross_place="center"
+                                style_pad_column="#unit_sm"
+                                >
+                                <div name="dot_active" width="16" height="4" style_radius="2" style_bg_opa="100%" style_bg_color="0x333333" style_border_width="0" />
+                                <div name="dot_1" width="8" height="2" style_radius="1" style_bg_opa="100%" style_bg_color="0x929293" style_border_width="0" />
+                                <div name="dot_2" width="8" height="2" style_radius="1" style_bg_opa="100%" style_bg_color="0x929293" style_border_width="0" />
+                                <div name="dot_3" width="8" height="2" style_radius="1" style_bg_opa="100%" style_bg_color="0x929293" style_border_width="0" />
+                                <div name="dot_4" width="8" height="2" style_radius="1" style_bg_opa="100%" style_bg_color="0x929293" style_border_width="0" />
                         </row>
                 </column>
+
+                <!-- Temperature arc -->
+                <lv_arc
+                        name="target_temp_arc"
+                        bind_value="thermostat_temp"
+                        min_value="16"
+                        max_value="31"
+                        width="86%"
+                        height="68%"
+                        align="center"
+                        >
+                        <style name="style_arc_indicator" selector="indicator" />
+                        <style name="style_arc_main" selector="main" />
+
+                        <column name="arc_content"
+                                style_width="content"
+                                style_height="content"
+                                style_flex_main_place="center"
+                                style_flex_cross_place="center"
+                                style_pad_row="#unit_xl"
+                                align="center"
+                                >
+                                <!-- Room temperature -->
+                                <row name="room_temp_row"
+                                        style_flex_main_place="center"
+                                        style_flex_cross_place="center"
+                                        style_pad_column="#unit_sm"
+                                        >
+                                        <lv_image name="thermometer_icon" src="icon_heart" />
+                                        <lv_label name="room_temp_label"
+                                                bind_text="room_temp"
+                                                bind_text-fmt="%d°C"
+                                                >
+                                                <style name="style_room_temp" />
+                                        </lv_label>
+                                </row>
+
+                                <!-- Target temperature -->
+                                <row name="target_temp_row"
+                                        style_flex_main_place="center"
+                                        style_flex_cross_place="center"
+                                        >
+                                        <lv_image name="temp_adjust_icon" src="icon_heart" />
+                                        <lv_label name="target_temp_label"
+                                                bind_text="thermostat_temp"
+                                                bind_text-fmt="%d"
+                                                >
+                                                <style name="style_target_temp" />
+                                        </lv_label>
+                                        <lv_label name="temp_unit_label" text="°C">
+                                                <style name="style_temp_unit" />
+                                        </lv_label>
+                                </row>
+
+                                <!-- Sleep / eco mode indicators -->
+                                <row name="mode_icons_row"
+                                        style_flex_main_place="center"
+                                        style_flex_cross_place="center"
+                                        style_pad_column="#unit_sm"
+                                        >
+                                        <lv_image name="sleep_icon" src="icon_heart" />
+                                        <lv_image name="eco_icon" src="icon_heart" />
+                                </row>
+                        </column>
+                </lv_arc>
+
+                <!-- Mode and fan speed buttons -->
+                <row name="bottom_buttons"
+                        style_flex_main_place="center"
+                        style_flex_cross_place="center"
+                        style_pad_column="#unit_sm"
+                        >
+                        <icon_label_button name="mode_button"     icon="$mode_icon"     label="$mode_label" />
+                        <icon_label_button name="fanspeed_button" icon="$fanspeed_icon" label="$fanspeed_label" />
+                </row>
         </view>
 </component>
