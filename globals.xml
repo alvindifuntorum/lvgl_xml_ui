@@ -94,6 +94,7 @@
 		<tiny_ttf name="geist_semibold_28" size="28" as_file="true" src_path="fonts/Geist/Geist-SemiBold.ttf" />
 		<tiny_ttf name="geist_regular_12" size="12" as_file="true" src_path="fonts/Geist/Geist-Regular.ttf" />
 		<tiny_ttf name="geist_regular_14" size="14" as_file="true" src_path="fonts/Geist/Geist-Regular.ttf" />
+		<tiny_ttf name="geist_regular_32" size="32" as_file="true" src_path="fonts/Geist/Geist-Regular.ttf" />
 		<tiny_ttf name="geist_light_60" size="60" as_file="true" src_path="fonts/Geist/Geist-Light.ttf" />
 		<tiny_ttf name="literata_80" size="80" as_file="true" src_path="fonts/Literata/Literata-Bold.ttf" />
 		<tiny_ttf

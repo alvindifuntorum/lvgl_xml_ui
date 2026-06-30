@@ -1,0 +1,59 @@
+<!--
+ Climate component XML definition.
+ -->
+<component>
+        <styles>
+                <style name="style_base"
+                        width="100%"
+                        height="100%"
+
+                        flex_grow="1"
+                        layout="flex"
+                        flex_flow="column"
+
+                        flex_main_place="center"
+                        flex_cross_place="center"
+
+                        shadow_color="0x000"
+			shadow_offset_y="2"
+			shadow_opa="30"
+			shadow_spread="1"
+			shadow_width="#unit_sm"
+                        />
+        </styles>
+
+        <view>
+                <remove_style_all />
+                <style name="style_base" />
+
+                <column
+                        name="climate_content"
+                        style_width="100%"
+                        style_height="100%"
+                        style_flex_grow="1"
+                        style_layout="flex"
+                        style_flex_flow="column"
+                        style_flex_main_place="center"
+                        style_flex_cross_place="center"
+                        style_pad_row="#unit_sm"
+                        >
+                        <lv_arc
+                                name="target_temp_arc"
+                                value="20"
+                                min_value="16"
+                                max_value="31"
+                                width="86%"
+                                height="76%"
+                                align="center"
+                                >
+                                <lv_label name="internal_temp_label" text="--itemp" align="center" y="-18" />
+                                <lv_label name="target_temp_label" text="--ttemp" align="center" y="4" />
+                                <lv_label name="sleep_label" text="--sleep" align="center" y="26" />
+                        </lv_arc>
+                        <row style_flex_main_place="center" style_flex_cross_place="center" style_pad_column="#unit_sm">
+                                <icon_label_button name="mode_button" label="Auto" />
+                                <icon_label_button name="fanspeed_button" label="Auto" />
+                        </row>
+                </column>
+        </view>
+</component>

@@ -83,10 +83,10 @@
 		/>
 
 		<!-- Title label -->
-		<style name="style_title" text_align="center" text_color="0x333333" />
+		<style name="style_title" text_align="center" text_color="0x333333" text_font="geist_bold_16" letter_space="1" />
 
 		<!-- Wheel picker (roller) -->
-		<style name="style_roller" width="100%" height="100%" />
+		<style name="style_roller" width="100%" height="100%" text_font="geist_regular_32" line_space="13" />
 
 		<!-- Selected item: dark bar with white text, rounded -->
 		<style name="style_roller_selected" bg_color="0x333333" bg_opa="255" radius="8" text_color="0xffffff" />
@@ -127,7 +127,7 @@
 			</lv_obj-->
 
 			<!-- Wheel picker (lv_roller) -->
-			<lv_roller name="options_roller" options="$options" selected="$selected">
+			<lv_roller name="options_roller" options="$options" selected="$selected" row_cnt="5">
 				<style name="style_roller" />
 				<style selector="selected" name="style_roller_selected" />
 			</lv_roller>

@@ -1,0 +1,160 @@
+<!--
+ Power component XML definition.
+ figma_node_id="548:8617"
+ -->
+<component>
+        <styles>
+                <style name="style_base"
+                        width="100%"
+                        height="100%"
+
+                        flex_grow="1"
+                        layout="flex"
+                        flex_flow="column"
+
+                        flex_main_place="center"
+                        flex_cross_place="center"
+
+                        shadow_color="0x000"
+			shadow_offset_y="2"
+			shadow_opa="30"
+			shadow_spread="1"
+			shadow_width="#unit_sm"
+                        />
+
+                <style name="style_indicator_text"
+                        text_color="0x527B35"
+                        />
+
+                <style name="style_warning_text"
+                        text_color="0xBD9D03"
+                        />
+
+                <style name="style_main_text"
+                        text_color="0x333333"
+                        />
+
+                <style name="style_sub_text"
+                        text_color="0x929293"
+                        />
+
+                <style name="style_hist_green"
+                        bg_opa="100%"
+                        bg_color="0x83C157"
+                        />
+
+                <style name="style_hist_yellow"
+                        bg_opa="100%"
+                        bg_color="0xF9D33E"
+                        />
+        </styles>
+        <view>
+                <remove_style_all />
+                <style name="style_base" />
+
+                <row name="top_row"
+                        width="100%"
+                        style_flex_main_place="space_between"
+                        style_flex_cross_place="start"
+                        style_pad_left="#unit_lg"
+                        style_pad_right="#unit_lg"
+                        style_pad_top="#unit_sm"
+                        >
+                        <column style_pad_row="#unit_2xs" style_flex_cross_place="center">
+                                <lv_label name="solar_current_label" text="11,2 A">
+                                        <style name="style_indicator_text" />
+                                </lv_label>
+                                <lv_image name="solar_icon" src="icon_solar_panel" />
+                        </column>
+
+                        <row style_pad_column="#unit_2xs" style_flex_cross_place="center" style_pad_top="#unit_2xs">
+                                <lv_image name="shore_icon" src="icon_main_right" />
+                                <lv_label name="shore_current_label" text="12,3 A">
+                                        <style name="style_indicator_text" />
+                                </lv_label>
+                        </row>
+
+                        <column style_pad_row="#unit_2xs" style_flex_cross_place="center">
+                                <lv_label name="alternator_current_label" text="13,4 A">
+                                        <style name="style_indicator_text" />
+                                </lv_label>
+                                <lv_image name="alternator_icon" src="icon_inverter" />
+                        </column>
+                </row>
+
+                <lv_arc
+                        name="state_of_charge_arc"
+                        value="75"
+                        min_value="0"
+                        max_value="100"
+                        width="84%"
+                        height="70%"
+                        align="center"
+                        >
+                        <column name="center_content"
+                                style_width="content"
+                                style_height="content"
+                                style_flex_main_place="center"
+                                style_flex_cross_place="center"
+                                style_pad_row="#unit_2xs"
+                                >
+                                <lv_label name="temp_label" text="+ 41 A">
+                                        <style name="style_indicator_text" />
+                                </lv_label>
+
+                                <row style_flex_main_place="center" style_flex_cross_place="start" style_pad_column="#unit_2xs">
+                                        <lv_label name="capacity_remain_label" text="75">
+                                                <style name="style_main_text" />
+                                        </lv_label>
+                                        <lv_label name="capacity_unit_label" text="%" style_pad_top="#unit_sm">
+                                                <style name="style_sub_text" />
+                                        </lv_label>
+                                </row>
+
+                                <row name="histogram_top" style_pad_column="2" style_flex_cross_place="end" style_pad_top="#unit_sm">
+                                        <div width="2" height="18" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="22" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="26" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="20" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="14" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="10" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="12" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="14" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="18" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="14" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                        <div width="2" height="10" style_bg_opa="100%" style_bg_color="0x83C157" />
+                                </row>
+
+                                <div width="100%" height="1" style_bg_opa="100%" style_bg_color="0xE2E3E2" />
+
+                                <row name="histogram_bottom" style_pad_column="2" style_flex_cross_place="start">
+                                        <div width="2" height="4" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="8" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="16" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="28" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="34" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="30" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="24" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="16" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="10" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="6" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                        <div width="2" height="2" style_bg_opa="100%" style_bg_color="0xF9D33E" />
+                                </row>
+                        </column>
+                </lv_arc>
+
+                <row name="bottom_row"
+                        width="100%"
+                        style_flex_main_place="center"
+                        style_flex_cross_place="center"
+                        style_pad_column="#unit_sm"
+                        style_pad_bottom="#unit_sm"
+                        >
+                        <lv_image name="battery_icon" src="icon_battery_energy" />
+                        <lv_label name="battery_current_label" text="11,2 A">
+                                <style name="style_warning_text" />
+                        </lv_label>
+                </row>
+
+        </view>
+</component>
