@@ -4,7 +4,11 @@
  -->
 <component>
         <api>
-                <prop name="zone_name"     type="string" default="Bedroom" />
+                <prop name="zone1_name"     type="string" default="Bedroom" />
+                <prop name="zone2_name"     type="string" default="Living Room" />
+                <prop name="zone3_name"     type="string" default="Kitchen" />
+                <prop name="zone4_name"     type="string" default="Bathroom" />
+                <prop name="zone5_name"     type="string" default="Office" />
                 <prop name="mode_icon"     type="image"  default="icon_heart" />
                 <prop name="mode_label"    type="string" default="Cooling" />
                 <prop name="fanspeed_icon" type="image"  default="icon_heart" />
@@ -25,11 +29,6 @@
                         shadow_opa="30"
                         shadow_spread="1"
                         shadow_width="#unit_sm"
-                        />
-
-                <style name="style_zone_name"
-                        text_font="geist_semibold_20"
-                        text_color="0x333333"
                         />
 
                 <style name="style_room_temp"
@@ -62,38 +61,18 @@
                 <remove_style_all />
                 <style name="style_base" />
 
-                <!-- Zone header: nav arrows + zone name + page indicator dots -->
-                <column name="zone_header"
+                <!-- Zone header: tab view for navigating between zones -->
+                <lv_tabview name="zone_header"
                         style_width="100%"
-                        style_flex_cross_place="center"
-                        style_pad_row="#unit_sm"
+                        tab_pos="top"
+                        tab_header_height="40"
                         >
-                        <row name="zone_nav"
-                                style_width="100%"
-                                style_flex_main_place="space_between"
-                                style_flex_cross_place="center"
-                                style_pad_left="#unit_xl"
-                                style_pad_right="#unit_xl"
-                                >
-                                <icon_button name="nav_prev" icon="icon_heart" />
-                                <lv_label name="zone_name_label" text="$zone_name">
-                                        <style name="style_zone_name" />
-                                </lv_label>
-                                <icon_button name="nav_next" icon="icon_heart" />
-                        </row>
-
-                        <row name="page_indicators"
-                                style_flex_main_place="center"
-                                style_flex_cross_place="center"
-                                style_pad_column="#unit_sm"
-                                >
-                                <div name="dot_active" width="16" height="4" style_radius="2" style_bg_opa="100%" style_bg_color="0x333333" style_border_width="0" />
-                                <div name="dot_1" width="8" height="2" style_radius="1" style_bg_opa="100%" style_bg_color="0x929293" style_border_width="0" />
-                                <div name="dot_2" width="8" height="2" style_radius="1" style_bg_opa="100%" style_bg_color="0x929293" style_border_width="0" />
-                                <div name="dot_3" width="8" height="2" style_radius="1" style_bg_opa="100%" style_bg_color="0x929293" style_border_width="0" />
-                                <div name="dot_4" width="8" height="2" style_radius="1" style_bg_opa="100%" style_bg_color="0x929293" style_border_width="0" />
-                        </row>
-                </column>
+                        <lv_tab name="tab_zone1" text="$zone1_name" />
+                        <lv_tab name="tab_zone2" text="$zone2_name" />
+                        <lv_tab name="tab_zone3" text="$zone3_name" />
+                        <lv_tab name="tab_zone4" text="$zone4_name" />
+                        <lv_tab name="tab_zone5" text="$zone5_name" />
+                </lv_tabview>
 
                 <!-- Temperature arc -->
                 <lv_arc
