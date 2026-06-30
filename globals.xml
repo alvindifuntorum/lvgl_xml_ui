@@ -4,6 +4,7 @@
 	</api>
 
 	<consts>
+		<int name="unit_2xs" value="4" />
 		<int name="unit_sm" value="6" />
 		<int name="unit_md" value="12" />
 		<int name="unit_lg" value="18" />

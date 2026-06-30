@@ -1,9 +1,9 @@
 /**
- * @file power_gen.h
+ * @file option_modal_gen.h
  */
 
-#ifndef POWER_H
-#define POWER_H
+#ifndef OPTION_MODAL_H
+#define OPTION_MODAL_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,7 +37,7 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 
-lv_obj_t * power_create(lv_obj_t * parent);
+lv_obj_t * option_modal_create(lv_obj_t * parent, const char * title, const char * options, int32_t selected, const void * close, const void * confirm);
 
 /**********************
  *      MACROS
@@ -47,4 +47,4 @@ lv_obj_t * power_create(lv_obj_t * parent);
 } /*extern "C"*/
 #endif
 
-#endif /*POWER_H*/
+#endif /*OPTION_MODAL_H*/

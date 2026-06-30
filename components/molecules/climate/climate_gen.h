@@ -14,15 +14,15 @@ extern "C" {
  *********************/
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
-#include "lvgl.h"
-#include "lvgl_private.h"
+    #include "lvgl.h"
+    #include "lvgl_private.h"
 #else
-#include "lvgl/lvgl.h"
-#include "lvgl/lvgl_private.h"
+    #include "lvgl/lvgl.h"
+    #include "lvgl/lvgl_private.h"
 #endif
 
 #ifdef LV_USE_XML
-#include "lv_xml/lv_xml.h"
+    #include "lv_xml/lv_xml.h"
 #endif
 
 /*********************
@@ -37,7 +37,7 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 
-lv_obj_t *climate_create(lv_obj_t *parent);
+lv_obj_t * climate_create(lv_obj_t * parent, const char * zone1_name, const char * zone2_name, const char * zone3_name, const char * zone4_name, const char * zone5_name, const void * mode_icon, const char * mode_label, const void * fanspeed_icon, const char * fanspeed_label);
 
 /**********************
  *      MACROS

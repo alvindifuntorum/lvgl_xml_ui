@@ -64,14 +64,13 @@
                 <!-- Zone header: tab view for navigating between zones -->
                 <lv_tabview name="zone_header"
                         style_width="100%"
-                        tab_pos="top"
-                        tab_header_height="40"
+                        tab_bar_position="top"
                         >
-                        <lv_tab name="tab_zone1" text="$zone1_name" />
-                        <lv_tab name="tab_zone2" text="$zone2_name" />
-                        <lv_tab name="tab_zone3" text="$zone3_name" />
-                        <lv_tab name="tab_zone4" text="$zone4_name" />
-                        <lv_tab name="tab_zone5" text="$zone5_name" />
+                        <lv_tabview-tab name="tab_zone1" text="$zone1_name" />
+                        <lv_tabview-tab name="tab_zone2" text="$zone2_name" />
+                        <lv_tabview-tab name="tab_zone3" text="$zone3_name" />
+                        <lv_tabview-tab name="tab_zone4" text="$zone4_name" />
+                        <lv_tabview-tab name="tab_zone5" text="$zone5_name" />
                 </lv_tabview>
 
                 <!-- Temperature arc -->
