@@ -1,0 +1,44 @@
+<component>
+	<previews>
+		<preview style_bg_color="0x888" />
+	</previews>
+	<api>
+		<prop name="icon" type="image" default="icon_menu" />
+                <prop name="label" type="string" default="Label" />
+	</api>
+	<styles>
+		<style name="style_base"
+			width="content"
+			height="content"
+
+                        layout="flex"
+                        flex_flow="row"
+                        flex_main_place="center"
+                        flex_cross_place="center"
+
+                        pad_all="#unit_sm"
+                        pad_column="#unit_sm"
+
+                        radius="#unit_md"
+
+                        bg_opa="100%"
+			bg_color="#bg_secondary_light"
+			text_color="#text_on_surface_primary_light"
+
+                        border_width="0"
+
+			shadow_color="0x222"
+			shadow_offset_y="2"
+			shadow_opa="30"
+			shadow_spread="1"
+			shadow_width="#unit_sm"
+                        />
+	</styles>
+
+	<view extends="lv_button">
+		<remove_style_all />
+                <style name="style_base" />
+		<lv_image name="image" src="$icon" align="center" />
+                <lv_label name="text" text="$label" style_text_color="0x000" />
+	</view>
+</component>
