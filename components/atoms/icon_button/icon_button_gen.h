@@ -1,9 +1,9 @@
 /**
- * @file icon_label_button_gen.h
+ * @file icon_button_gen.h
  */
 
-#ifndef ICON_LABEL_BUTTON_H
-#define ICON_LABEL_BUTTON_H
+#ifndef ICON_BUTTON_H
+#define ICON_BUTTON_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,7 +37,7 @@ extern "C" {
  * GLOBAL PROTOTYPES
  **********************/
 
-lv_obj_t * icon_label_button_create(lv_obj_t * parent, const void * icon, const char * label);
+lv_obj_t * icon_button_create(lv_obj_t * parent, const void * icon);
 
 /**********************
  *      MACROS
@@ -47,4 +47,4 @@ lv_obj_t * icon_label_button_create(lv_obj_t * parent, const void * icon, const 
 } /*extern "C"*/
 #endif
 
-#endif /*ICON_LABEL_BUTTON_H*/
+#endif /*ICON_BUTTON_H*/

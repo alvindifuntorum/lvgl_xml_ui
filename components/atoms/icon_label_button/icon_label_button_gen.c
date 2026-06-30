@@ -8,7 +8,7 @@
  *********************/
 
 #include "icon_label_button_gen.h"
-#include "../../../hmi_ui.h"
+#include "../../../examples.h"
 
 /*********************
  *      DEFINES
@@ -30,7 +30,7 @@
  *   GLOBAL FUNCTIONS
  **********************/
 
-lv_obj_t *icon_label_button_create(lv_obj_t *parent, const void *icon, const char *label)
+lv_obj_t * icon_label_button_create(lv_obj_t * parent, const void * icon, const char * label)
 {
     LV_TRACE_OBJ_CREATE("begin");
 
@@ -38,8 +38,7 @@ lv_obj_t *icon_label_button_create(lv_obj_t *parent, const void *icon, const cha
 
     static bool style_inited = false;
 
-    if (!style_inited)
-    {
+    if (!style_inited) {
         lv_style_init(&style_base);
         lv_style_set_width(&style_base, LV_SIZE_CONTENT);
         lv_style_set_height(&style_base, LV_SIZE_CONTENT);
@@ -63,17 +62,17 @@ lv_obj_t *icon_label_button_create(lv_obj_t *parent, const void *icon, const cha
         style_inited = true;
     }
 
-    lv_obj_t *lv_button_0 = lv_button_create(parent);
+    lv_obj_t * lv_button_0 = lv_button_create(parent);
     lv_obj_set_name_static(lv_button_0, "icon_label_button_#");
 
     lv_obj_remove_style_all(lv_button_0);
     lv_obj_add_style(lv_button_0, &style_base, 0);
-    lv_obj_t *image = lv_image_create(lv_button_0);
+    lv_obj_t * image = lv_image_create(lv_button_0);
     lv_obj_set_name(image, "image");
     lv_image_set_src(image, icon);
     lv_obj_set_align(image, LV_ALIGN_CENTER);
 
-    lv_obj_t *text = lv_label_create(lv_button_0);
+    lv_obj_t * text = lv_label_create(lv_button_0);
     lv_obj_set_name(text, "text");
     lv_label_set_text(text, label);
     lv_obj_set_style_text_color(text, lv_color_hex3(0x000), 0);
@@ -86,3 +85,4 @@ lv_obj_t *icon_label_button_create(lv_obj_t *parent, const void *icon, const cha
 /**********************
  *   STATIC FUNCTIONS
  **********************/
+

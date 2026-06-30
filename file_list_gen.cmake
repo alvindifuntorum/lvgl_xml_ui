@@ -2,6 +2,10 @@ set(LV_EDITOR_PROJECT_SOURCES)
 list(
   APPEND
   LV_EDITOR_PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/components/atoms/button/button_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/atoms/icon_button/icon_button_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/atoms/icon_label_button/icon_label_button_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/atoms/parameter/parameter_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/bar/bar_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/button/button_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/basic/card/card_gen.c
@@ -25,6 +29,9 @@ list(
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/thermostat/thermostat_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/weather/location_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/components/cards/weather/weather_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/modals/option_modal/option_modal_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/molecules/climate/climate_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/components/molecules/power/power_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/examples_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/examples.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/elements_gen.c)

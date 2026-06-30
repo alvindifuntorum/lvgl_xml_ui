@@ -35,6 +35,8 @@ extern "C" {
  *      DEFINES
  *********************/
 
+#define UNIT_2XS 4
+
 #define UNIT_SM 6
 
 #define UNIT_MD 12
@@ -123,6 +125,8 @@ extern lv_font_t * geist_regular_12;
 
 extern lv_font_t * geist_regular_14;
 
+extern lv_font_t * geist_regular_32;
+
 extern lv_font_t * geist_light_60;
 
 extern lv_font_t * literata_80;
@@ -199,6 +203,10 @@ void examples_init_gen(const char * asset_path);
  **********************/
 
 /*Include all the widgets, components and screens of this library*/
+#include "components/atoms/button/button_gen.h"
+#include "components/atoms/icon_button/icon_button_gen.h"
+#include "components/atoms/icon_label_button/icon_label_button_gen.h"
+#include "components/atoms/parameter/parameter_gen.h"
 #include "components/basic/bar/bar_gen.h"
 #include "components/basic/button/button_gen.h"
 #include "components/basic/card/card_gen.h"
@@ -222,6 +230,9 @@ void examples_init_gen(const char * asset_path);
 #include "components/cards/thermostat/thermostat_gen.h"
 #include "components/cards/weather/location_gen.h"
 #include "components/cards/weather/weather_gen.h"
+#include "components/modals/option_modal/option_modal_gen.h"
+#include "components/molecules/climate/climate_gen.h"
+#include "components/molecules/power/power_gen.h"
 #include "screens/elements_gen.h"
 
 #ifdef __cplusplus

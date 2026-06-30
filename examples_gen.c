@@ -50,6 +50,7 @@ lv_font_t * geist_semibold_20;
 lv_font_t * geist_semibold_28;
 lv_font_t * geist_regular_12;
 lv_font_t * geist_regular_14;
+lv_font_t * geist_regular_32;
 lv_font_t * geist_light_60;
 lv_font_t * literata_80;
 lv_font_t * abril_fatface_80;
@@ -146,6 +147,9 @@ void examples_init_gen(const char * asset_path)
     /* create tiny ttf font "geist_regular_14" from file */
     lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Geist/Geist-Regular.ttf");
     geist_regular_14 = lv_tiny_ttf_create_file(buf, 14);
+    /* create tiny ttf font "geist_regular_32" from file */
+    lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Geist/Geist-Regular.ttf");
+    geist_regular_32 = lv_tiny_ttf_create_file(buf, 32);
     /* create tiny ttf font "geist_light_60" from file */
     lv_snprintf(buf, 256, "%s%s", asset_path, "fonts/Geist/Geist-Light.ttf");
     geist_light_60 = lv_tiny_ttf_create_file(buf, 60);
@@ -263,6 +267,7 @@ void examples_init_gen(const char * asset_path)
     lv_xml_register_font(NULL, "geist_semibold_28", geist_semibold_28);
     lv_xml_register_font(NULL, "geist_regular_12", geist_regular_12);
     lv_xml_register_font(NULL, "geist_regular_14", geist_regular_14);
+    lv_xml_register_font(NULL, "geist_regular_32", geist_regular_32);
     lv_xml_register_font(NULL, "geist_light_60", geist_light_60);
     lv_xml_register_font(NULL, "literata_80", literata_80);
     lv_xml_register_font(NULL, "abril_fatface_80", abril_fatface_80);
