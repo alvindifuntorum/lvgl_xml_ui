@@ -87,7 +87,7 @@
 			name="style_title"
 			text_align="center"
 			text_color="0x333333"
-			text_font="geist_semibold_28"
+			text_font="gibson_24"
 			text_letter_space="1"
 		/>
 
@@ -96,7 +96,9 @@
 			name="style_roller"
 			width="100%"
 			height="100%"
-			text_font="geist_regular_48"
+			bg_color="0xffffff"
+			bg_opa="100%"
+			text_font="gibson_52"
 			text_line_space="13"
 			flex_grow="1"
 		/>
