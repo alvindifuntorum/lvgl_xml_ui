@@ -55,7 +55,7 @@
 		<!-- Modal card: white, rounded, flex column -->
 		<style
 			name="style_modal"
-			width="494"
+			width="50%"
 			height="100%"
 			layout="flex"
 			flex_flow="column"
@@ -83,10 +83,23 @@
 		/>
 
 		<!-- Title label -->
-		<style name="style_title" text_align="center" text_color="0x333333" text_font="geist_bold_16" text_letter_space="1" />
+		<style
+			name="style_title"
+			text_align="center"
+			text_color="0x333333"
+			text_font="geist_semibold_28"
+			text_letter_space="1"
+		/>
 
 		<!-- Wheel picker (roller) -->
-		<style name="style_roller" width="100%" height="100%" text_font="geist_regular_32" text_line_space="13" />
+		<style
+			name="style_roller"
+			width="100%"
+			height="100%"
+			text_font="geist_regular_48"
+			text_line_space="13"
+			flex_grow="1"
+		/>
 
 		<!-- Selected item: dark bar with white text, rounded -->
 		<style name="style_roller_selected" bg_color="0x333333" bg_opa="255" radius="8" text_color="0xffffff" />
@@ -121,21 +134,11 @@
 				</lv_label>
 			</lv_obj>
 
-			<!-- Spacer -->
-			<!--lv_obj width="375" height="16">
-				<remove_style_all />
-			</lv_obj-->
-
 			<!-- Wheel picker (lv_roller) -->
 			<lv_roller name="options_roller" options="$options" selected="$selected" visible_row_count="5">
 				<style name="style_roller" />
 				<style selector="selected" name="style_roller_selected" />
 			</lv_roller>
-
-			<!-- Spacer -->
-			<lv_obj width="375" height="30">
-				<remove_style_all />
-			</lv_obj>
 		</lv_obj>
 
 		<!-- Right side: Confirm button (placeholder icon: icon_cal_check) -->
