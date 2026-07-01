@@ -1,0 +1,65 @@
+<component>
+	<previews>
+		<preview width="420" />
+	</previews>
+	<styles>
+		<style name="style_base" width="100%" height="content" layout="flex" flex_flow="column" />
+
+		<!-- Dot row -->
+
+		<style name="zone_header" width="100%" />
+		<style name="pagination_row" width="100%" flex_main_place="center" flex_cross_place="center" pad_column="4" />
+
+		<!-- Active pagination dot: 16x4, dark -->
+		<style
+			name="style_dot_active"
+			width="16"
+			height="4"
+			radius="2"
+			bg_color="0x333333"
+			bg_opa="100%"
+			border_width="0"
+		/>
+
+		<!-- Inactive pagination dot: 8x2, neutral gray -->
+		<style
+			name="style_dot_inactive"
+			width="8"
+			height="2"
+			radius="2"
+			bg_color="0x929293"
+			bg_opa="100%"
+			border_width="0"
+		/>
+	</styles>
+	<view>
+		<remove_style_all />
+		<style name="style_base" />
+		<row>
+			<style name="pagination_row" />
+			<icon_button />
+			<lv_label
+				text="Bedroom"
+				style_flex_grow="1"
+				style_text_align="center"
+				style_text_font="gibson_24_semibold"
+			/>
+			<icon_button />
+		</row>
+		<row>
+			<style name="pagination_row" />
+			<lv_obj name="dot1">
+				<remove_style_all />
+				<style name="style_dot_active" />
+			</lv_obj>
+			<lv_obj name="dot2">
+				<remove_style_all />
+				<style name="style_dot_inactive" />
+			</lv_obj>
+			<lv_obj name="dot3">
+				<remove_style_all />
+				<style name="style_dot_inactive" />
+			</lv_obj>
+		</row>
+	</view>
+</component>
