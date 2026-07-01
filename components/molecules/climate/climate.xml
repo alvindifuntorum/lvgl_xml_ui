@@ -26,6 +26,8 @@
 			border_width="0"
 		/>
 
+		<style name="style_arc" height="100%" width="100%" pad_top="10" />
+
 		<!-- Header container: flex column, 4px top padding -->
 		<style
 			name="style_header"
@@ -130,6 +132,8 @@
 
 		<!-- Temperature unit suffix: "°C", neutral gray, body-lg -->
 		<style name="style_temp_unit" text_font="gibson_18" text_color="0x929293" />
+
+		<style name="button_row" width="100%" flex_main_place="center" pad_column="10" />
 	</styles>
 
 	<view>
@@ -139,7 +143,7 @@
 		<zone />
 
 		<!-- ── Temperature arc: 270° sweep, gap at bottom ── -->
-		<lv_arc
+		<!--lv_arc
 			name="target_temp_arc"
 			bind_value="thermostat_temp"
 			min_value="16"
@@ -155,7 +159,6 @@
 			<style name="style_arc_indicator" selector="indicator" />
 			<style name="style_arc_knob" selector="knob" />
 
-			<!-- Centered content column inside the arc -->
 			<column
 				name="arc_content"
 				style_width="content"
@@ -165,7 +168,6 @@
 				style_pad_row="#unit_xl"
 				align="center"
 			>
-				<!-- Room temperature row: thermometer icon + "27°C" -->
 				<row
 					name="room_temp_row"
 					style_flex_main_place="center"
@@ -178,7 +180,6 @@
 					</lv_label>
 				</row>
 
-				<!-- Target temperature row: adjust icon + "21" + "°C" -->
 				<row name="target_temp_row" style_flex_main_place="center" style_flex_cross_place="center">
 					<lv_image name="temp_adjust_icon" src="icon_heart" style_width="20" style_height="20" />
 					<lv_label name="target_temp_label" bind_text="thermostat_temp" bind_text-fmt="%d">
@@ -189,7 +190,6 @@
 					</lv_label>
 				</row>
 
-				<!-- Mode indicator icons: sleep + eco -->
 				<row
 					name="mode_icons_row"
 					style_flex_main_place="center"
@@ -200,18 +200,20 @@
 					<lv_image name="eco_icon" src="icon_heart" />
 				</row>
 			</column>
-		</lv_arc>
+		</lv_arc-->
+
+		<row style_width="100%" style_flex_grow="1" style_flex_cross_place="center">
+			<lv_arc>
+				<style name="style_arc" />
+				<row>
+					<lv_label text="26" />
+				</row>
+			</lv_arc>
+		</row>
 
 		<!-- ── Bottom: mode and fan-speed pill buttons ── -->
-		<row
-			name="bottom_buttons"
-			height="100%"
-			style_height="52"
-			style_flex_main_place="center"
-			style_flex_cross_place="center"
-			style_pad_all="10"
-			style_pad_column="10"
-		>
+		<row>
+			<style name="button_row" />
 			<icon_label_button name="mode_button" icon="$mode_icon" label="$mode_label" />
 			<icon_label_button name="fanspeed_button" icon="$fanspeed_icon" label="$fanspeed_label" />
 		</row>
