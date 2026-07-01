@@ -98,7 +98,7 @@
 			height="100%"
 			bg_color="0xffffff"
 			bg_opa="100%"
-			text_font="gibson_52"
+			text_font="gibson_60"
 			text_line_space="13"
 			flex_grow="1"
 		/>
