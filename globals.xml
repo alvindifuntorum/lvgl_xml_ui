@@ -110,5 +110,62 @@
 			as_file="true"
 			src_path="fonts/BigShoulders/BigShoulders-Bold.ttf"
 		/>
+
+		<bin
+            name="gibson_14"
+            src_path="fonts/gibson/Gibson.otf"
+            size="14"
+            bpp="4"
+            range="0x20-0x7f"
+            as_file="false"
+          />
+        <bin
+            name="gibson_16"
+            src_path="fonts/gibson/Gibson-Regular.otf"
+            size="16"
+            bpp="4"
+            range="0x20-0x7f"
+            as_file="false"
+          />
+        <bin
+            name="gibson_18"
+            src_path="fonts/gibson/Gibson-Light.otf"
+            size="18"
+            bpp="4"
+            range="0x20-0x7f"
+            as_file="false"
+          />
+        <bin
+            name="gibson_20"
+            src_path="fonts/gibson/Gibson.otf"
+            size="20"
+            bpp="4"
+            range="0x20-0x7f"
+            as_file="false"
+          />
+        <bin
+            name="gibson_22"
+            src_path="fonts/gibson/Gibson.otf"
+            size="22"
+            bpp="4"
+            range="0x20-0x7f"
+            as_file="false"
+          />
+        <bin
+            name="gibson_24"
+            src_path="fonts/gibson/Gibson-Regular.otf"
+            size="24"
+            bpp="4"
+            range="0x20-0x7f"
+            as_file="false"
+          />
+        <bin
+            name="gibson_52"
+            src_path="gibson/Gibson-Regular.otf"
+            size="52"
+            bpp="4"
+            range="0x20-0x7f"
+            as_file="false"
+          />
 	</fonts>
 </globals>
