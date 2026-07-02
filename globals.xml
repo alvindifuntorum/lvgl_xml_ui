@@ -67,8 +67,13 @@
 	</subjects>
 
 	<images>
-		<file name="icon_left_small" src_path="icons/icon_left_small.png" />
+		<file name="icon_left_small"  src_path="icons/icon_left_small.png" />
 		<file name="icon_right_small" src_path="icons/icon_right_small.png" />
+		<file name="icon_cooling"     src_path="icons/icon_cooling.png" />
+		<file name="icon_dry"         src_path="icons/icon_dry.png" />
+		<file name="icon_fan"         src_path="icons/icon_fan.png" />
+		<file name="icon_heating"     src_path="icons/icon_heating.png" />
+		<file name="icon_ventilation" src_path="icons/icon_ventilation.png" />
 
 		<file name="icon_plus" figma_node_id="24:32" src_path="images/icon_plus.png" />
 		<file name="icon_minus" figma_node_id="24:37" src_path="images/icon_minus.png" />
