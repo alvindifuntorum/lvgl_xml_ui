@@ -1,139 +1,66 @@
-<!-- figma_node_id="548:5405" -->
+<!--
+ Climate component XML definition.
+ -->
 <component>
 	<previews>
-		<preview width="390" height="400" />
+		<preview height="480" />
 	</previews>
-
-	<api>
-		<prop name="zone_name" type="string" default="Bedroom" />
-		<prop name="mode_icon" type="image" default="icon_heart" />
-		<prop name="mode_label" type="string" default="Cooling" />
-		<prop name="fanspeed_icon" type="image" default="icon_heart" />
-		<prop name="fanspeed_label" type="string" default="Medium" />
-	</api>
-
 	<styles>
 		<style
 			name="style_base"
 			width="100%"
 			height="100%"
+			flex_grow="1"
 			layout="flex"
 			flex_flow="column"
-			flex_main_place="center"
 			flex_cross_place="center"
-			pad_all="0"
-			bg_opa="0"
-			border_width="0"
 		/>
 
-		<style name="style_arc" height="100%" width="100%" pad_top="10" />
-
-		<!-- Header container: flex column, 4px top padding -->
 		<style
-			name="style_header"
-			width="100%"
-			height="content"
+			name="control_arc"
+			flex_grow="1"
 			layout="flex"
 			flex_flow="column"
-			flex_main_place="center"
 			flex_cross_place="center"
-			pad_top="4"
-			pad_bottom="0"
-			pad_left="0"
-			pad_right="0"
-			bg_opa="0"
-			border_width="0"
+			flex_main_place="center"
 		/>
 
-		<!-- Nav row: left arrow / zone name / right arrow, 40px tall, 32px side padding -->
+		<style name="content_arc" width="100%" flex_grow="1" pad_all="10" />
+
+		<style name="background_arc_indicator" arc_color="0x0BBCF6" arc_width="6" arc_rounded="true" pad_all="4" />
 		<style
-			name="style_nav_row"
+			name="background_arc_knob"
+			bg_opa="100%"
+			bg_color="0xfff"
+			border_color="0x000"
+			border_width="1"
+			pad_all="2"
+			shadow_color="0x312e81"
+			shadow_width="10"
+			shadow_opa="160"
+		/>
+
+		<style name="control_arc_indicator" arc_color="0x929293" arc_width="6" arc_rounded="true" pad_all="4" />
+		<style
+			name="control_arc_knob"
+			bg_opa="100%"
+			bg_color="0xfff"
+			border_color="0x000"
+			border_width="1"
+			pad_all="2"
+			shadow_color="0x312e81"
+			shadow_width="10"
+			shadow_opa="160"
+		/>
+
+		<style
+			name="control_row"
 			width="100%"
-			height="40"
-			layout="flex"
-			flex_flow="row"
-			flex_main_place="space_between"
+			pad_column="10"
+			pad_bottom="30"
 			flex_cross_place="center"
-			pad_left="32"
-			pad_right="32"
-			pad_top="0"
-			pad_bottom="0"
-			bg_opa="0"
-			border_width="0"
-		/>
-
-		<!-- Arrow navigation buttons: 40x40, transparent -->
-		<style
-			name="style_nav_btn"
-			width="40"
-			height="40"
-			layout="flex"
 			flex_main_place="center"
-			flex_cross_place="center"
-			bg_opa="0"
-			border_width="0"
-			shadow_opa="0"
-			pad_all="0"
 		/>
-
-		<!-- Zone name: Gibson 20px, dark text -->
-		<style name="style_zone_name" text_font="gibson_20" text_color="0x333333" />
-
-		<!-- Pagination dots row -->
-		<style
-			name="style_pagination_row"
-			width="content"
-			height="content"
-			layout="flex"
-			flex_flow="row"
-			flex_main_place="center"
-			flex_cross_place="center"
-			pad_column="4"
-			bg_opa="0"
-			border_width="0"
-		/>
-
-		<!-- Active pagination dot: 16x4, dark -->
-		<style
-			name="style_dot_active"
-			width="16"
-			height="4"
-			radius="2"
-			bg_color="0x333333"
-			bg_opa="100%"
-			border_width="0"
-		/>
-
-		<!-- Inactive pagination dot: 8x2, neutral gray -->
-		<style
-			name="style_dot_inactive"
-			width="8"
-			height="2"
-			radius="2"
-			bg_color="0x929293"
-			bg_opa="100%"
-			border_width="0"
-		/>
-
-		<!-- Arc track (gray unfilled background) -->
-		<style name="style_arc_main" arc_width="12" arc_color="0xD0D0D0" />
-
-		<!-- Arc indicator (blue filled portion) -->
-		<style name="style_arc_indicator" arc_width="12" arc_color="0x45AFDB" />
-
-		<!-- Arc knob: colored dot at end of indicator -->
-		<style name="style_arc_knob" pad_all="4" bg_color="0x45AFDB" border_width="0" />
-
-		<!-- Room temperature label: "27°C", neutral gray, body-xl -->
-		<style name="style_room_temp" text_font="gibson_22" text_color="0x929293" />
-
-		<!-- Target temperature number: "21", large, dark, h0 -->
-		<style name="style_target_temp" text_font="gibson_60" text_color="0x333333" />
-
-		<!-- Temperature unit suffix: "°C", neutral gray, body-lg -->
-		<style name="style_temp_unit" text_font="gibson_18" text_color="0x929293" />
-
-		<style name="button_row" width="100%" flex_main_place="center" pad_column="10" />
 	</styles>
 
 	<view>
@@ -142,80 +69,45 @@
 
 		<zone />
 
-		<!-- ── Temperature arc: 270° sweep, gap at bottom ── -->
-		<!--lv_arc
-			name="target_temp_arc"
-			bind_value="thermostat_temp"
-			min_value="16"
-			max_value="31"
-			width="100%"
-			height="content"
-			bg_start_angle="135"
-			bg_end_angle="45"
-			start_angle="135"
-			flex_grow="1"
-		>
-			<style name="style_arc_main" selector="main" />
-			<style name="style_arc_indicator" selector="indicator" />
-			<style name="style_arc_knob" selector="knob" />
+		<lv_obj>
+			<remove_style_all />
+			<style name="content_arc" />
 
-			<column
-				name="arc_content"
-				style_width="content"
-				style_height="content"
-				style_flex_main_place="center"
-				style_flex_cross_place="center"
-				style_pad_row="#unit_xl"
-				align="center"
-			>
-				<row
-					name="room_temp_row"
-					style_flex_main_place="center"
-					style_flex_cross_place="center"
-					style_pad_column="#unit_2xs"
-				>
-					<lv_image name="thermometer_icon" src="icon_heart" />
-					<lv_label name="room_temp_label" bind_text="room_temp" bind_text-fmt="%d°C">
-						<style name="style_room_temp" />
-					</lv_label>
+			<lv_arc width="100%" height="100%" mode="reverse" value="50" disabled="true">
+				<!-- Internal temperature arc -->
+				<style name="background_arc_indicator" selector="indicator" />
+				<style name="background_arc_knob" selector="knob" />
+			</lv_arc>
+
+			<lv_arc width="100%" height="100%" style_arc_opa="0">
+				<!-- Target temperature arc -->
+				<style name="control_arc" />
+				<!--style name="control_arc_knob" selector="knob" /-->
+
+				<style name="control_arc_indicator" selector="indicator" />
+				<style name="control_arc_knob" selector="knob" />
+
+				<row width="100%" style_flex_main_place="center" style_pad_bottom="30">
+					<lv_image src="icon_cloudy" style_pad_right="20" />
+					<lv_label name="internal_temp_label" text="27" align="center" style_text_font="gibson_40" />
+					<lv_label text="°C" align="center" style_text_font="gibson_40" />
 				</row>
-
-				<row name="target_temp_row" style_flex_main_place="center" style_flex_cross_place="center">
-					<lv_image name="temp_adjust_icon" src="icon_heart" style_width="20" style_height="20" />
-					<lv_label name="target_temp_label" bind_text="thermostat_temp" bind_text-fmt="%d">
-						<style name="style_target_temp" />
-					</lv_label>
-					<lv_label name="temp_unit_label" text="°C">
-						<style name="style_temp_unit" />
-					</lv_label>
+				<row width="100%" style_flex_main_place="center" style_pad_bottom="30">
+					<lv_image src="icon_cloudy" />
+					<lv_label name="target_temp_label" text="21" style_text_font="gibson_80" />
+					<lv_label text="°C" style_text_font="gibson_20" />
 				</row>
-
-				<row
-					name="mode_icons_row"
-					style_flex_main_place="center"
-					style_flex_cross_place="center"
-					style_pad_column="#unit_sm"
-				>
-					<lv_image name="sleep_icon" src="icon_heart" />
-					<lv_image name="eco_icon" src="icon_heart" />
-				</row>
-			</column>
-		</lv_arc-->
-
-		<row style_width="100%" style_flex_grow="1" style_flex_cross_place="center">
-			<lv_arc>
-				<style name="style_arc" />
-				<row>
-					<lv_label text="26" />
+				<row width="100%" style_flex_main_place="center" style_pad_column="10">
+					<lv_image name="img_sleep" src="icon_cloudy" />
+					<lv_image name="img_smarteco" src="icon_cloudy" />
 				</row>
 			</lv_arc>
-		</row>
+		</lv_obj>
 
-		<!-- ── Bottom: mode and fan-speed pill buttons ── -->
-		<row>
-			<style name="button_row" />
-			<icon_label_button name="mode_button" icon="$mode_icon" label="$mode_label" />
-			<icon_label_button name="fanspeed_button" icon="$fanspeed_icon" label="$fanspeed_label" />
+		<row scrollable="false">
+			<style name="control_row" />
+			<icon_label_button name="mode_button" label="Mode" icon="icon_cooling" width="45%" />
+			<icon_label_button name="fanspeed_button" label="Fan" icon="icon_fan" width="45%" />
 		</row>
 	</view>
 </component>

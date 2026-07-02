@@ -67,12 +67,12 @@
 	</subjects>
 
 	<images>
-		<file name="icon_left_small"  src_path="icons/icon_left_small.png" />
+		<file name="icon_left_small" src_path="icons/icon_left_small.png" />
 		<file name="icon_right_small" src_path="icons/icon_right_small.png" />
-		<file name="icon_cooling"     src_path="icons/icon_cooling.png" />
-		<file name="icon_dry"         src_path="icons/icon_dry.png" />
-		<file name="icon_fan"         src_path="icons/icon_fan.png" />
-		<file name="icon_heating"     src_path="icons/icon_heating.png" />
+		<file name="icon_cooling" src_path="icons/icon_cooling.png" />
+		<file name="icon_dry" src_path="icons/icon_dry.png" />
+		<file name="icon_fan" src_path="icons/icon_fan.png" />
+		<file name="icon_heating" src_path="icons/icon_heating.png" />
 		<file name="icon_ventilation" src_path="icons/icon_ventilation.png" />
 
 		<file name="icon_plus" figma_node_id="24:32" src_path="images/icon_plus.png" />
@@ -150,7 +150,9 @@
 		<tiny_ttf name="gibson_18_semibold" src_path="fonts/gibson/Gibson-SemiBold.ttf" size="18" as_file="true" />
 		<tiny_ttf name="gibson_24_semibold" src_path="fonts/gibson/Gibson-SemiBold.ttf" size="24" as_file="true" />
 
+		<tiny_ttf name="gibson_40" src_path="fonts/gibson/Gibson-Regular.ttf" size="40" as_file="true" />
 		<tiny_ttf name="gibson_52" src_path="fonts/gibson/Gibson-Regular.ttf" size="52" as_file="true" />
 		<tiny_ttf name="gibson_60" src_path="fonts/gibson/Gibson-Regular.ttf" size="60" as_file="true" />
+		<tiny_ttf name="gibson_80" src_path="fonts/gibson/Gibson-Regular.ttf" size="80" as_file="true" />
 	</fonts>
 </globals>

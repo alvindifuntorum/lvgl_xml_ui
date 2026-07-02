@@ -37,20 +37,28 @@
 		<style name="style_base" />
 		<row>
 			<style name="pagination_row" />
-			<icon_button />
+			<icon_button icon="icon_left_small" />
 			<lv_label
 				text="Bedroom"
 				style_flex_grow="1"
 				style_text_align="center"
 				style_text_font="gibson_24_semibold"
 			/>
-			<icon_button />
+			<icon_button icon="icon_right_small" />
 		</row>
 		<row>
 			<style name="pagination_row" />
 			<lv_obj name="dot1">
 				<remove_style_all />
 				<style name="style_dot_active" />
+			</lv_obj>
+			<lv_obj name="dot2">
+				<remove_style_all />
+				<style name="style_dot_inactive" />
+			</lv_obj>
+			<lv_obj name="dot3">
+				<remove_style_all />
+				<style name="style_dot_inactive" />
 			</lv_obj>
 			<lv_obj name="dot2">
 				<remove_style_all />
