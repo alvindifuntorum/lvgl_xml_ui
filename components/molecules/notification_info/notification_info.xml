@@ -18,13 +18,13 @@
 		<style
 			name="content_header_label"
 			width="100%"
-			text_font="gibson_semibold"
+			text_font="gibson_18_semibold"
 			pad_bottom="4"
 			border_color="0x333"
 			border_width="1"
 			border_side="bottom"
 		/>
-		<style name="content_detail_textarea" width="100%" pad_top="10" height="content" text_align="center" />
+		<style name="content_detail_textarea" width="100%" pad_top="10" height="content" text_align="left" />
 	</styles>
 	<view>
 		<remove_style_all />

@@ -139,7 +139,7 @@
 			range="0x20-0x7f"
 			as_file="false"
 		/>
-		<tiny_ttf name="gibson_semibold" src_path="fonts/gibson/Gibson-SemiBold.ttf" size="18" as_file="true" />
+		<tiny_ttf name="gibson_18_semibold" src_path="fonts/gibson/Gibson-SemiBold.ttf" size="18" as_file="true" />
 		<tiny_ttf name="gibson_24_semibold" src_path="fonts/gibson/Gibson-SemiBold.ttf" size="24" as_file="true" />
 
 		<tiny_ttf name="gibson_52" src_path="fonts/gibson/Gibson-Regular.ttf" size="52" as_file="true" />
