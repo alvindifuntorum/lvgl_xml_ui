@@ -67,6 +67,9 @@
 	</subjects>
 
 	<images>
+		<file name="icon_left_small" src_path="icons/icon_left_small.png" />
+		<file name="icon_right_small" src_path="icons/icon_right_small.png" />
+
 		<file name="icon_plus" figma_node_id="24:32" src_path="images/icon_plus.png" />
 		<file name="icon_minus" figma_node_id="24:37" src_path="images/icon_minus.png" />
 		<file name="light_temp_arc_bg" figma_node_id="57:31" src_path="images/light_temp_arc_bg.png" />
